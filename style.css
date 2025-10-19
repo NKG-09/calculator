@@ -41,10 +41,10 @@ section {
     padding: min(2vw, 10px);
     margin: min(2vw, 20px);
 
-    border: double var(--primary-color) 5px;
+    border: double var(--primary-color) min(1vw, 5px);
     border-radius: min(1vw, 10px);
     background-color: var(--background-color);
-    box-shadow: 0 0 40px black;
+    box-shadow: 0 0 min(8vw, 40px) black;
 }
 
 #result {
@@ -52,25 +52,27 @@ section {
     width: 100%;
     flex: 1;
     align-items: center;
-
-    font-size: min(10vw, 48px);
-    text-align: right;
-    white-space: nowrap;
-    overflow-x: auto;
-}
-
-@media (pointer: coarse) {
-    #result {
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-    #result::-webkit-scrollbar {
-        display: none;
-    }
 }
 
 #result p {
     width: 100%;
+    font-size: min(10vw, 48px);
+    text-align: right;
+    white-space: nowrap;
+    overflow-x: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+}
+
+@media (pointer: coarse) {
+    #result p {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    #result p::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 #buttons {
@@ -88,7 +90,7 @@ button {
     color: var(--primary-color);
     background-color: var(--secondary-color);
     transition: transform 0.05s ease;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 min(2vw, 40px) black;
 }
 
 @media (hover:hover) {
@@ -102,6 +104,6 @@ button {
 
 @media (hover:none) {
     button:active {
-        transform: scale(1.1);
+        transform: scale(0.9);
     }
 }
