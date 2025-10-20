@@ -93,6 +93,10 @@ button {
     box-shadow: 0 0 min(2vw, 40px) black;
 }
 
+button.selected {
+    background-color: var(--background-color);
+}
+
 @media (hover:hover) {
     button:hover {
         transform: scale(1.2);
