@@ -22,6 +22,20 @@ document.querySelector("#buttons")
     }
 });
 
+document.addEventListener("keyup", (event) => {
+    if (event.key === 'Backspace') deleteLastDigit();
+    else if (event.key === "Enter" || event.key === '=') evaluateAnswer();
+    else if ("0123456789.".includes(event.key)) addDigit(event.key);
+    else if ("%^r/*-+=".includes(event.key)) {
+        switch (event.key) {
+            case 'r': operate('√'); break;
+            case '/': operate('÷'); break;
+            case '*': operate('×'); break;
+            default: operate(event.key); break;
+        }
+    }
+});
+
 /* INPUT FUNCTIONS */
 
 function addDigit (digit) {
